@@ -19,8 +19,6 @@ std::vector<size_t> dynamicKnapsack(std::vector<size_t> weight, std::vector<size
         B[0][w] = 0;
     for (i = 0; i <= size; ++i)
         B[i][0] = 0;
-
-
     for (i = 1; i < size + 1; ++i) {
         for (w = 0; w < capacity + 1; ++w) {
             if (weight[i - 1] > w)
@@ -31,11 +29,8 @@ std::vector<size_t> dynamicKnapsack(std::vector<size_t> weight, std::vector<size
     }
     for (i = 0; i < size; ++i)
         selected[i] = 0;
-
     i = size;
     w = capacity;
-
-
     while (B[i][w] != 0) {
         if (B[i][w] == B[i - 1][w]) {
             i = i - 1;
